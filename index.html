@@ -3,81 +3,66 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Step Check: Find the exact line where the math went wrong</title>
-<meta name="description" content="Every step of your work is checked, the first mistake is pinpointed and named, and hints get you there yourself.">
+<title>Step Check: Find the first line where an algebra solution goes wrong</title>
+<meta name="description" content="Type a problem and your working, one step per line. Each step is checked against the one before it, the first mistake is named, and you get hints rather than the answer. Worked solutions, graphs and practice sets are included.">
 <meta property="og:title" content="Step Check">
-<meta property="og:description" content="Every step of your work is checked, the first mistake is pinpointed and named, and hints get you there yourself.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232f8f83'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='13' fill='white'%3ESC%3C/text%3E%3C/svg%3E">
+<meta property="og:description" content="Type a problem and your working, one step per line. Each step is checked against the one before it, the first mistake is named, and you get hints rather than the answer. Worked solutions, graphs and practice sets are included.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%233a6ea5'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='19' fill='white'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style id="type">:root { --font-head: 'IBM Plex Sans', system-ui, sans-serif; --font-body: 'IBM Plex Sans', system-ui, sans-serif; }</style>
 <link rel="stylesheet" href="styles/base.css">
 <link rel="stylesheet" href="styles/landing.css">
-<style>:root { --accent: #2f8f83; }</style>
+<style>:root { --accent: #3a6ea5; }</style>
 </head>
 <body class="landing">
-<header class="l-nav">
-  <a class="l-brand" href="#top"><span class="logo">SC</span><b>Step Check</b></a>
-  <nav aria-label="Sections"><a href="#demo">Demo</a><a href="#ask">Ask it</a><a href="#features">Features</a><a href="#faq">FAQ</a></nav>
-  <div class="l-nav-cta"><a class="btn ghost" href="login.html">Log in</a><a class="btn primary" href="login.html">Get started free</a></div>
-</header>
+<header class="l-nav"><div class="l-wrap l-nav-in">
+  <a class="l-brand" href="#top">Step Check</a>
+  <nav aria-label="Sections"><a href="#demo">Try it</a><a href="#ask">Commands</a><a href="#features">Features</a><a href="https://github.com/dguywhoknows/algebra-step-checker" rel="noopener">Source</a></nav>
+  <div class="l-nav-cta"><a class="btn ghost" href="login.html">Log in</a><a class="btn primary" href="login.html">Sign up free</a></div>
+</div></header>
 
 <main id="top">
-  <section class="l-hero">
-    <p class="l-kicker">Free · runs in your browser · AI built in</p>
-    <h1>Find the exact line where the math went wrong.</h1>
-    <p class="l-sub">Every step of your work is checked, the first mistake is pinpointed and named, and hints get you there yourself.</p>
-    <div class="l-actions"><a class="btn primary big" href="login.html">Get started free</a><a class="btn big" href="#demo">See it working</a></div>
+  <section class="l-wrap l-hero">
+    <h1>Find the first line where an algebra solution goes wrong.</h1>
+    <p class="l-sub">Type a problem and your working, one step per line. Each step is checked against the one before it, the first mistake is named, and you get hints rather than the answer. Worked solutions, graphs and practice sets are included.</p>
+    <div class="l-actions"><a class="btn primary big" href="login.html">Sign up free</a><a class="l-link" href="#demo">Or try it on this page</a></div>
+    <p class="l-meta">Version 2.0.0 · MIT license · <a href="https://github.com/dguywhoknows/algebra-step-checker" rel="noopener">github.com/dguywhoknows/algebra-step-checker</a></p>
   </section>
 
-  <section class="l-demo reveal" id="demo">
-    <div class="l-window"><div class="l-window-bar"><i></i><i></i><i></i><span>Step Check</span></div>
-      <iframe src="app.html?embed=1" title="Step Check live demo" loading="lazy"></iframe></div>
-    <p class="l-caption">This is the real app running below, not a recording. Try it.</p>
+  <section class="l-wrap l-demo" id="demo">
+    <div class="l-frame"><iframe src="app.html?embed=1" title="Step Check" loading="lazy"></iframe></div>
+    <p class="l-caption">The app itself, running inside this page. Anything you do here is saved in your browser.</p>
   </section>
 
-  <section class="l-section reveal" id="ask">
-    <div class="l-head"><p class="l-kicker">Just say what you want</p><h2>Tell it in plain words. It uses its own tools to do it.</h2>
-      <p>Open the AI box in the app, type a request, and the AI drives the app's real features for you: it sets things up, edits, runs and reports back. Standing instructions let you shape every AI feature to how you like to work.</p></div>
-    <div class="l-prompts"><div class="l-prompt"><div class="say">Check my work on this equation</div><div class="does">Verifies each line and finds the first error.</div></div><div class="l-prompt"><div class="say">Show me a worked solution to 2x^2 - 3x + 1 = 0</div><div class="does">Solves it step by step, with each step verified.</div></div><div class="l-prompt"><div class="say">Give me five problems on my weakest mistake</div><div class="does">Starts a practice set aimed at that misconception.</div></div></div>
+  <section class="l-wrap l-section" id="ask">
+    <h2>Ask it to do things</h2>
+    <p class="l-lead">Press Ctrl+K in the app (Cmd+K on a Mac) and describe what you want. The model chooses from Step Check's own functions, runs them in order and tells you what changed. Some examples:</p>
+    <table class="l-cmds"><tr><td class="say">Check my work on this equation</td><td>Verifies each line and finds the first error.</td></tr><tr><td class="say">Show me a worked solution to 2x^2 - 3x + 1 = 0</td><td>Solves it step by step, with each step verified.</td></tr><tr><td class="say">Give me five problems on my weakest mistake</td><td>Starts a practice set aimed at that misconception.</td></tr></table>
+    <p class="l-small">Instructions you save in the same box, such as "keep it short" or "I'm a beginner", are added to every AI request the app makes.</p>
   </section>
 
-  <section class="l-section reveal" id="features">
-    <div class="l-head"><p class="l-kicker">What it does</p><h2>Everything in one place</h2></div>
-    <div class="l-grid"><div class="l-card"><h3>Line-by-line verification of algebra</h3><p>Expressions, equations and &#x27;x = 2 or x = 3&#x27; answer sets</p></div><div class="l-card"><h3>Numerical equivalence engine</h3><p>Random-point testing, proportionality test, root finding with bisection + ternary search</p></div><div class="l-card"><h3>Local error classification</h3><p>Local error classification (sign flip, constant offset, scale factor, lost/extra solutions)</p></div><div class="l-card"><h3>KaTeX-rendered steps</h3><p>KaTeX-rendered steps with / status and evidence</p></div><div class="l-card"><h3>AI misconception tagging against a</h3><p>AI misconception tagging against a fixed taxonomy (exponent over addition, partial division, sign moves …)</p></div><div class="l-card"><h3>Progressive hints</h3><p>3 Socratic nudges, then the correct step</p></div><div class="l-card"><h3>Persistent misconception profile that grows</h3><p>Persistent misconception profile that grows with errors and decays with clean solutions; targeted practice generator</p></div><div class="l-card"><h3>Solver page</h3><p>Worked solutions for linear and quadratic equations (factoring when roots are rational, the quadratic formula otherwise) and polynomial expansion, with every step run back through the checker</p></div><div class="l-card"><h3>Graph page</h3><p>Plots both sides of an equation or an expression on a canvas, marks the solutions, and auto-fits the window to the roots</p></div></div>
+  <section class="l-wrap l-section" id="features">
+    <h2>Features</h2>
+    <dl class="l-feats"><div><dt>Line-by-line verification of algebra</dt><dd>Expressions, equations and &#x27;x = 2 or x = 3&#x27; answer sets.</dd></div><div><dt>Numerical equivalence engine</dt><dd>Random-point testing, proportionality test, root finding with bisection + ternary search.</dd></div><div><dt>Local error classification</dt><dd>Sign flip, constant offset, scale factor, lost/extra solutions.</dd></div><div><dt>KaTeX-rendered steps</dt><dd>With / status and evidence.</dd></div><div><dt>AI misconception tagging against a</dt><dd>Fixed taxonomy (exponent over addition, partial division, sign moves …).</dd></div><div><dt>Progressive hints</dt><dd>3 Socratic nudges, then the correct step.</dd></div><div><dt>Persistent misconception profile that grows</dt><dd>With errors and decays with clean solutions; targeted practice generator.</dd></div><div><dt>Solver page</dt><dd>Worked solutions for linear and quadratic equations (factoring when roots are rational, the quadratic formula otherwise) and polynomial expansion, with every step run back through the checker.</dd></div><div><dt>Graph page</dt><dd>Plots both sides of an equation or an expression on a canvas, marks the solutions, and auto-fits the window to the roots.</dd></div><div><dt>Practice page</dt><dd>Generated problem sets per topic, or aimed at your weakest misconception; each answer must be a finished form and every step must verify.</dd></div></dl>
   </section>
 
-  <section class="l-section reveal">
-    <div class="l-head"><p class="l-kicker">How it works</p><h2>Real engines where it counts, AI where it helps</h2></div>
-    <div class="l-steps">
-      <div><span>1</span><h3>Create a free account</h3><p>One account works across every app on this site.</p></div>
-      <div><span>2</span><h3>Ask in your own words</h3><p>Type or click. The AI handles misconception diagnosis grounded in verifier evidence (JSON, fixed taxonomy); practice-problem generation aimed at the student&#x27;s weakest misconception.</p></div>
-      <div><span>3</span><h3>Keep what you make</h3><p>Your work is saved in your browser and can be exported any time.</p></div>
-    </div>
-    <p class="l-note">Computed locally, with no AI involved: parsing, verification, root finding, error classification, rendering, profile.</p>
+  <section class="l-wrap l-section l-split">
+    <div><h2>Runs in your browser</h2><p>Parsing, verification, root finding, error classification, rendering, profile. None of this needs a network connection or a model.</p></div>
+    <div><h2>Uses a language model for</h2><p>Misconception diagnosis grounded in verifier evidence (JSON, fixed taxonomy). Practice-problem generation aimed at the student&#x27;s weakest misconception.</p></div>
   </section>
 
-  <section class="l-section reveal" id="faq">
-    <div class="l-head"><p class="l-kicker">Questions</p><h2>Good to know</h2></div>
-    <div class="l-faq">
-      <details><summary>Is it free?</summary><p>Yes. Every feature is free. Each account gets a daily allowance of AI requests.</p></details>
-      <details><summary>Where is my data stored?</summary><p>What you create stays in this browser on this device. Your account is only used to sign you in and to use the built-in AI. You can export a backup or delete everything from Settings.</p></details>
-      <details><summary>Do I need an API key?</summary><p>No. Signed-in users get the built-in AI with nothing to set up. You can also connect your own Groq or OpenRouter key in Settings if you prefer.</p></details>
-      <details><summary>What can I type into the AI box?</summary><p>Anything you would ask a helpful colleague who knows the app, such as: "Check my work on this equation". It plans the steps, runs the app's own functions and tells you what it did. The Instructions tab saves preferences every AI feature follows.</p></details>
-      <details><summary>Can I see the code?</summary><p>Yes. It is open source under the MIT license on <a href="https://github.com/dguywhoknows/algebra-step-checker" rel="noopener">GitHub</a>, with a <a href="tests/">public test suite</a>.</p></details>
-    </div>
-  </section>
-
-  <section class="l-final reveal">
-    <h2>Find the exact line where the math went wrong.</h2>
-    <a class="btn primary big" href="login.html">Get started free</a>
+  <section class="l-wrap l-section" id="notes">
+    <h2>Notes</h2>
+    <dl class="l-notes">
+      <dt>Cost</dt><dd>Free. Each account has a daily allowance of AI requests.</dd>
+      <dt>Your data</dt><dd>What you make stays in this browser on this device. Your account is only used for signing in and for the built-in AI. You can export a backup or clear everything from Settings.</dd>
+      <dt>AI access</dt><dd>Signed-in users get the built-in AI with nothing to set up. You can also use your own Groq or OpenRouter key under Settings.</dd>
+      <dt>Source</dt><dd>The code and tests are on <a href="https://github.com/dguywhoknows/algebra-step-checker" rel="noopener">GitHub</a> under the MIT license. The tests also run <a href="tests/">in your browser</a>.</dd>
+    </dl>
   </section>
 </main>
 
-<footer class="l-foot"><span>Step Check</span><span><a href="https://github.com/dguywhoknows/algebra-step-checker" rel="noopener">Source</a> · <a href="tests/">Tests</a> · MIT license</span></footer>
-<script>
-document.querySelectorAll('.reveal').forEach((el) => el.classList.add('pre'));
-const io = new IntersectionObserver((es) => es.forEach((x) => { if (x.isIntersecting) { x.target.classList.remove('pre'); io.unobserve(x.target); } }), { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-</script>
+<footer class="l-foot"><div class="l-wrap l-foot-in"><span>Step Check, by <a href="https://github.com/dguywhoknows" rel="noopener">dguywhoknows</a></span><span><a href="https://github.com/dguywhoknows/algebra-step-checker" rel="noopener">Source</a> · <a href="tests/">Tests</a> · <a href="login.html">Sign up free</a></span></div></footer>
 </body>
 </html>

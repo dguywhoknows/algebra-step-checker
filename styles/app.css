@@ -1,4 +1,4 @@
-:root { --accent: #2f8f83; }
+:root { --accent: #3a6ea5; }
 #steps { min-height: 200px; font-size: 14px; line-height: 1.7; }
 .ln { display: grid; grid-template-columns: 34px 30px minmax(0, 1fr); gap: 8px; align-items: center; padding: 10px 6px; border-bottom: 1px solid var(--line); border-radius: 8px; }
 .ln .n { color: var(--muted); font: 12px var(--mono); text-align: right; }

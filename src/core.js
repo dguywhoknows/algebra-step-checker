@@ -1,4 +1,4 @@
-/* core.js — parsing, numeric equivalence checking, error classification, worked solutions and problem generation (pure, unit-tested; needs mathjs as `math`). */
+/* Parsing, numeric equivalence checking, error classification, worked solutions and problem generation (pure, unit-tested; needs mathjs as `math`). */
 
 var TAGS = {
   MOVE_TERM_SIGN: 'Keeps the sign when moving a term across “=”',
