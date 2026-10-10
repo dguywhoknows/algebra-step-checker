@@ -1,0 +1,11 @@
+{
+  "scripts": [
+    "src/core.js"
+  ],
+  "npm": {
+    "math": "mathjs/lib/browser/math.js"
+  },
+  "cdn": [
+    "https://cdnjs.cloudflare.com/ajax/libs/mathjs/15.2.0/math.min.js"
+  ]
+}
