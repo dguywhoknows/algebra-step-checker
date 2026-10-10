@@ -231,3 +231,19 @@ renderProfile();
 $('#problem').value = SAMPLES[0][1];
 $('#steps').value = SAMPLES[0][2];
 check(false);
+
+/* ================= AI command box ================= */
+Copilot.register({
+  context: () => `Page: ${Router.current}. Check page problem: ${$('#problem').value}. Steps: ${$('#steps').value.replace(/\n/g, ' | ')}. ${lastRun ? (lastRun.firstBad >= 0 ? `First wrong step: ${lastRun.firstBad} (${lastRun.res[lastRun.firstBad].why})` : 'All steps verified') : ''}. Weakest misconception: ${weakest() ? TAGS[weakest()] : 'none yet'}.`,
+  actions: [
+    { name: 'check_work', description: 'Verify a student\'s steps line by line and diagnose the first error. Omit arguments to check what is already on the Check page.', params: { problem: 'optional, e.g. Solve 3(x - 2) = 9', steps: 'optional, steps separated by newlines' },
+      run: async ({ problem, steps }) => { if (problem) $('#problem').value = problem; if (steps) $('#steps').value = Array.isArray(steps) ? steps.join('\n') : steps; Router.go('check'); await check(); return lastRun.firstBad >= 0 ? `Step ${lastRun.firstBad} is wrong: ${lastRun.res[lastRun.firstBad].why}` : 'Every step checks out'; } },
+    { name: 'worked_solution', description: 'Show a verified step-by-step solution', params: { problem: 'e.g. Solve 2x^2 - 3x + 1 = 0' }, run: ({ problem }) => { openSolver(problem); return `Solved ${problem}`; } },
+    { name: 'graph', description: 'Plot an equation or expression in one variable', params: { expression: 'e.g. x^2 - 5x + 6 = 0' }, run: async ({ expression }) => { $('#plotIn').value = expression; Router.go('graph'); await new Promise((r) => setTimeout(r, 40)); plot(true); return $('#plotInfo').textContent || `Plotted ${expression}`; } },
+    { name: 'practice_set', description: 'Start a practice set. kind "auto" targets the weakest misconception.', params: { kind: ['auto', ...Object.keys(KINDS)].join(' | '), count: 'number of problems' },
+      run: ({ kind, count }) => { Router.go('practice'); $('#pKind').value = kind && (kind === 'auto' || KINDS[kind]) ? kind : 'auto'; if (count) { const sel = $('#pCount'); sel.value = String(count); if (sel.value !== String(count) && sel.options) sel.value = [...sel.options].map((o) => o.value).reduce((a, b) => (Math.abs(b - count) < Math.abs(a - count) ? b : a)); } newSet(); return `${set.length} problems: ${set.map((p) => p.problem).join('; ')}`; } },
+    { name: 'add_practice_problem', description: 'Add one problem you write to the top of the practice set (it is verified first)', params: { problem: 'e.g. Solve 5(x - 3) = 2x + 6' },
+      run: ({ problem }) => { const s = solveSteps(problem); if (!s || (!s.answer && !s.steps.length)) throw new Error('Could not verify that problem'); Router.go('practice'); set.unshift({ kind: 'linear', problem, work: '', solved: false, tries: 0 }); renderSet(); return `Added ${problem}`; } },
+    { name: 'progress', query: true, description: 'Look up the misconception profile and recent history', params: {}, run: () => JSON.stringify({ misconceptions: Object.entries(profile).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]).map(([k, v]) => ({ tag: k, meaning: TAGS[k], weight: +v.toFixed(2) })), recent: log.slice(0, 10).map((x) => ({ problem: x.problem, clean: x.firstBad < 0, tag: x.tag })) }) },
+  ],
+});
