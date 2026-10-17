@@ -8,7 +8,7 @@ Live: https://dguywhoknows.github.io/algebra-step-checker/
 
 ## Overview
 
-Most tutors only check the final answer. Step Check verifies your reasoning line by line. Each step is parsed with math.js and compared to the previous one numerically: expressions must agree at random sample points, and equations must be scalar multiples of each other or keep exactly the same solution set (found by sign-change scanning, bisection and ternary search for double roots). The first wrong step is classified locally (sign error? off by a constant? lost solutions?). The AI then names the specific misconception, gives three progressively stronger Socratic hints and finally the correct step. A per-student misconception profile tracks your error patterns and generates targeted practice.
+Most tutors only check the final answer. Show Your Work verifies your reasoning line by line. Each step is parsed with math.js and compared to the previous one numerically: expressions must agree at random sample points, and equations must be scalar multiples of each other or keep exactly the same solution set (found by sign-change scanning, bisection and ternary search for double roots). The first wrong step is classified locally (sign error? off by a constant? lost solutions?). The AI then names the specific misconception, gives three progressively stronger Socratic hints and finally the correct step. A per-student misconception profile tracks your error patterns and generates targeted practice.
 
 ## Pages
 
